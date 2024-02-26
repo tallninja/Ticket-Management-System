@@ -1,0 +1,43 @@
+@BASE_URL=http://127.0.0.1:8000/api
+
+###
+GET {{BASE_URL}}/events
+
+###
+POST {{BASE_URL}}/events
+Content-Type: application/json
+
+{
+    "name": "Test Event 1",
+    "description": "Test description",
+    "vip_ticket_price": 2000,
+    "regular_ticket_price": 1000,
+    "max_attendees": 500
+}
+
+###
+GET {{BASE_URL}}/events/2
+
+###
+PUT {{BASE_URL}}/events/1
+Content-Type: application/json
+
+{
+    "name": "Test Event 1 UPDATED!!!",
+    "description": "Test description",
+    "vip_ticket_price": 2000,
+    "regular_ticket_price": 1000,
+    "max_attendees": 500
+}
+
+###
+DELETE {{BASE_URL}}/events/1
+
+###
+POST {{BASE_URL}}/events/2/reserve
+Content-Type: application/json
+
+{
+    "user_email": "ernestwambua2@gmail.com",
+    "num_tickets": 5
+}
