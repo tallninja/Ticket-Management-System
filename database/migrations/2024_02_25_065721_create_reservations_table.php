@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('event_id')->constrained('events');
-            $table->string('user_email');
+            $table->string('type');
             $table->integer('num_tickets');
+            $table->integer('amount_paid');
             $table->timestamps();
         });
     }

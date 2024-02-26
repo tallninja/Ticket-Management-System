@@ -26,11 +26,11 @@ class RolesTableSeeder extends Seeder
         User::firstOrCreate(
             ['email' => 'admin@example.com'],
             ['name' => 'Admin User', 'password' => bcrypt('password')]
-        )->roles()->attach($adminRole);
+        )->roles()->attach([$adminRole->id, $userRole->id]);
 
         User::firstOrCreate(
             ['email' => 'user@example.com'],
             ['name' => 'Regular User', 'password' => bcrypt('password')]
-        )->roles()->attach($userRole);
+        )->roles()->attach([$userRole->id]);
     }
 }

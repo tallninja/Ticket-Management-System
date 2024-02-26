@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function reservetions()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
     public function hasAnyRole($roles)
     {
         return $this->roles()->whereIn('name', $roles)->count() > 0;

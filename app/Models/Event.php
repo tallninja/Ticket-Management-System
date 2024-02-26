@@ -9,4 +9,9 @@ class Event extends Model
 {
     protected $guarded = [];
     use HasFactory;
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }
