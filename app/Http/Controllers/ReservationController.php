@@ -47,7 +47,7 @@ class ReservationController extends Controller
             return Redirect::route('dashboard');
         }
 
-        $amount_paid = $type == 'Regular'
+        $amount_paid = $type == 'regular'
             ? $event->regular_ticket_price * $num_tickets
             : $event->vip_ticket_price * $num_tickets;
 
